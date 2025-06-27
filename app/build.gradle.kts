@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.orgs"
-    compileSdk = 34
+    namespace = "com.example.todolist"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.orgs"
+        applicationId = "com.example.todolist"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     composeOptions {
@@ -50,6 +51,18 @@ android {
 }
 
 dependencies {
+
+    val room_version = "2.7.2"
+
+    implementation(libs.androidx.room.room.runtime)
+    implementation(libs.androidx.room.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.rxjava2)
+    implementation(libs.androidx.room.rxjava3)
+    implementation(libs.androidx.room.guava)
+    testImplementation(libs.androidx.room.testing)
+    implementation(libs.androidx.room.paging)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
