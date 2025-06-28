@@ -23,7 +23,7 @@ class TodoAdapter (private val context: Context, val listener: TodoClickListener
         val item= todoList[position]
         holder.title.text = item.title
         holder.title.isSelected = true
-        holder.note.text = item.date
+        holder.note.text = item.note
         holder.date.text = item.date
         holder.date.isSelected = true
         holder.todo_layout.setOnClickListener{

@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), TodoAdapter.TodoClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         initUI()
 

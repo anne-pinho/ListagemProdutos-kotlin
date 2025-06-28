@@ -50,7 +50,7 @@ class AddTodoActivity : AppCompatActivity() {
             val todoDescription = binding.etNote.text.toString()
 
             if (title.isNotEmpty() && todoDescription.isNotEmpty()) {
-                val formatter = SimpleDateFormat("EEE, d MMM yyyy HH:mm a", Locale.getDefault())
+                val formatter = SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault())
 
                 todo = if (isUpdate) {
                     Todo(oldTodo.id, title, todoDescription, formatter.format(Date()))

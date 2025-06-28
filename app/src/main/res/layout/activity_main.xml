@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,6 +27,34 @@
             android:layout_height="wrap_content"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linear"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+<!--        <TextView-->
+<!--            android:id="@+id/text_title_main"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Você tem 5 tarefas hoje!"-->
+<!--            android:gravity="center"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="24sp"-->
+<!--            android:paddingTop="50dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_current_date"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:hint="Sabado, 10 de Setembro"-->
+<!--            android:textSize="15sp"/>-->
+<!--    </LinearLayout>-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
