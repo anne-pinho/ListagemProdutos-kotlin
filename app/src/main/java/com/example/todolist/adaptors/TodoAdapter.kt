@@ -26,9 +26,9 @@ class TodoAdapter (private val context: Context, val listener: TodoClickListener
         holder.note.text = item.date
         holder.date.text = item.date
         holder.date.isSelected = true
-        holder.todo_layout.setOnclickListener{
-            listener.onItemClicked(todoList[holder.adapterPosition])
-        }
+//        holder.todo_layout.setOnclickListener{
+//            listener.onItemClicked(todoList[holder.adapterPosition])
+//        }
     }
 
     override fun getItemCount(): Int {
