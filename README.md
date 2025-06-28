@@ -24,8 +24,8 @@ Aplicativo Android de lista de tarefas (To-Do), desenvolvido com Kotlin, Jetpack
 
 ## 📂 Estrutura do Projeto
 com.example.todolist
-|── adaptors        # Adapter do RecyclerView
-|── database        # Configuração do Room Database
+|── adaptors  # Adapter do RecyclerView
+|── database  # Configuração do Room Database
 |── models          # ViewModel, entidades, etc.
 |── ui              # Activities e telas
 |── utils           # (opcional) funções auxiliares
