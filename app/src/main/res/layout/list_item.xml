@@ -28,7 +28,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text="@string/title"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
         </RelativeLayout>
@@ -40,7 +40,7 @@
             android:padding="8dp"
             android:textStyle="normal"
             android:text="@string/note"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
         <TextView
             android:id="@+id/tv_date"
@@ -54,7 +54,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="@string/date"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
