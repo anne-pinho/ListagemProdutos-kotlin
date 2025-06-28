@@ -11,6 +11,8 @@ Aplicativo Android de lista de tarefas (To-Do), desenvolvido com Kotlin, Jetpack
 - 🧠 Armazenamento local com Room
 - 🔁 Atualizações reativas usando LiveData + ViewModel
 
+
+
 ## 🛠️ Tecnologias Utilizadas
 
 - [Kotlin](https://kotlinlang.org/)
@@ -21,14 +23,6 @@ Aplicativo Android de lista de tarefas (To-Do), desenvolvido com Kotlin, Jetpack
 - [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
 - Material Design Components
 
-
-## 📂 Estrutura do Projeto
-com.example.todolist
-|── adaptors  # Adapter do RecyclerView
-|── database  # Configuração do Room Database
-|── models          # ViewModel, entidades, etc.
-|── ui              # Activities e telas
-|── utils           # (opcional) funções auxiliares
 
 
 ## 🧑🏽‍💻 Autora
