@@ -12,9 +12,16 @@ interface TodoDao {
     @Delete
     suspend fun delete(todo: Todo)
 
-    @Query("SELECT * from todo_table order by id ASC")
+    @Update
+    suspend fun update(todo: Todo)
+
+    @Query("SELECT * from todo_table order by localId ASC")
     fun getAllTodos(): LiveData<List<Todo>>
 
-    @Query("UPDATE todo_table set title = :title, note = :note where id= :id")
-    suspend fun update(id: Int?, title: String?, note: String?)
+    @Query("SELECT * FROM todo_table WHERE apiId = :apiId LIMIT 1")
+    suspend fun getTodoByApiId(apiId: Int): Todo?
+
+    @Query("SELECT * FROM todo_table WHERE synced = 0")
+    suspend fun getUnsyncedTodos(): List<Todo>
+
 }

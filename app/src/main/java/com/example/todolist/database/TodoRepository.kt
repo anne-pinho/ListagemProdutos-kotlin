@@ -15,6 +15,11 @@ class TodoRepository (private val todoDao: TodoDao){
     }
 
     suspend fun update(todo: Todo){
-        todoDao.update(todo.id, todo.title, todo.note)
+        todoDao.update(todo)
     }
+
+    suspend fun getTodoByApiId(apiId: Int) = todoDao.getTodoByApiId(apiId)
+
+    suspend fun getUnsyncedTodos() = todoDao.getUnsyncedTodos()
+
 }

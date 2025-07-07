@@ -15,69 +15,75 @@ import java.util.*
 class AddTodoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddTodoBinding
-    private lateinit var todo: Todo
-    private lateinit var oldTodo: Todo
     private var isUpdate = false
+    private var oldTodo: Todo? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddTodoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recupera o todo passado por Intent, de forma compatível com qualquer versão
-        try {
-            oldTodo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                intent.getSerializableExtra("current_todo", Todo::class.java)!!
+        // Verifica se é atualização
+        oldTodo = try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                intent.getSerializableExtra("current_todo", Todo::class.java)
             } else {
                 @Suppress("DEPRECATION")
-                intent.getSerializableExtra("current_todo") as Todo
+                intent.getSerializableExtra("current_todo") as? Todo
             }
-
-            binding.etTitle.setText(oldTodo.title)
-            binding.etNote.setText(oldTodo.note)
-            isUpdate = true
-
         } catch (e: Exception) {
             e.printStackTrace()
+            null
         }
 
-        // Mostrar ou esconder o botão de deletar
+        oldTodo?.let {
+            binding.etTitle.setText(it.title)
+            binding.etNote.setText(it.note)
+            isUpdate = true
+        }
+
         binding.imgDelete.visibility = if (isUpdate) View.VISIBLE else View.INVISIBLE
 
-        // Botão de salvar (check)
+        // Botão de salvar
         binding.imgCheck.setOnClickListener {
             val title = binding.etTitle.text.toString()
-            val todoDescription = binding.etNote.text.toString()
+            val note = binding.etNote.text.toString()
 
-            if (title.isNotEmpty() && todoDescription.isNotEmpty()) {
+            if (title.isNotEmpty() && note.isNotEmpty()) {
                 val formatter = SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault())
+                val date = formatter.format(Date())
 
-                todo = if (isUpdate) {
-                    Todo(oldTodo.id, title, todoDescription, formatter.format(Date()))
-                } else {
-                    Todo(null, title, todoDescription, formatter.format(Date()))
-                }
+                val updatedTodo = Todo(
+                    localId = oldTodo?.localId, // MANTÉM o ID ao atualizar
+                    apiId = oldTodo?.apiId,     // Preserva apiId
+                    title = title,
+                    note = note,
+                    date = date,
+                    synced = false              // Marcar como não sincronizado após alteração
+                )
 
                 val resultIntent = Intent()
-                resultIntent.putExtra("todo", todo)
+                resultIntent.putExtra("todo", updatedTodo)
                 setResult(Activity.RESULT_OK, resultIntent)
                 finish()
-
             } else {
-                Toast.makeText(this, "Please enter some data", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_LONG).show()
             }
         }
 
         // Botão de deletar
         binding.imgDelete.setOnClickListener {
-            val deleteIntent = Intent()
-            deleteIntent.putExtra("todo", oldTodo)
-            deleteIntent.putExtra("delete_todo", true)
-            setResult(Activity.RESULT_OK, deleteIntent)
-            finish()
+            oldTodo?.let {
+                val deleteIntent = Intent().apply {
+                    putExtra("todo", it)
+                    putExtra("delete_todo", true)
+                }
+                setResult(Activity.RESULT_OK, deleteIntent)
+                finish()
+            }
         }
 
-        // Botão de voltar
+        // Botão voltar
         binding.imgBackArrow.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }

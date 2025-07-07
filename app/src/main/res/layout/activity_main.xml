@@ -17,43 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:layout_gravity="center"
             android:textStyle="bold"
             android:textSize="24sp"
             android:text="@string/todo_list"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:gravity="center" />
 
     </androidx.appcompat.widget.Toolbar>
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/linear"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-<!--        <TextView-->
-<!--            android:id="@+id/text_title_main"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Você tem 5 tarefas hoje!"-->
-<!--            android:gravity="center"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="24sp"-->
-<!--            android:paddingTop="50dp"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/text_current_date"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:hint="Sabado, 10 de Setembro"-->
-<!--            android:textSize="15sp"/>-->
-<!--    </LinearLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
