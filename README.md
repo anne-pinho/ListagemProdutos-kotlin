@@ -1,30 +1,42 @@
-# 📝 ToDo List App
+# 📝 Android To-Do List App
 
-Aplicativo Android de lista de tarefas (To-Do), desenvolvido com Kotlin, Jetpack Compose, Room e ViewModel. Permite adicionar, atualizar e excluir tarefas de forma prática e moderna.
+An Android to-do list application built with Kotlin, Jetpack Compose, Room, and ViewModel. Now integrated with a public API using Retrofit for remote data synchronization.
 
-## 📱 Funcionalidades
+---
 
-- ✅ Adicionar novas tarefas
-- ✏️ Editar tarefas existentes
-- 🗑️ Excluir tarefas
-- 📋 Exibição de tarefas em uma lista
-- 🧠 Armazenamento local com Room
-- 🔁 Atualizações reativas usando LiveData + ViewModel
+## 📱 Features
 
+- ✅ Add new tasks
+- ✏️ Edit existing tasks
+- 🗑️ Delete tasks
+- 📋 Display tasks in a list
+- 🧠 Local data storage with Room
+- ☁️ Remote data sync using Retrofit
+- 🔁 Reactive updates with LiveData + ViewModel
 
+---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-- [Kotlin](https://kotlinlang.org/)
-- [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Room Persistence Library](https://developer.android.com/jetpack/androidx/releases/room)
-- [ViewModel & LiveData](https://developer.android.com/topic/libraries/architecture/viewmodel)
-- [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
-- [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
+- Kotlin
+- Jetpack Compose
+- Room Persistence Library
+- ViewModel & LiveData
+- Retrofit + Gson Converter
+- RecyclerView
+- ViewBinding
 - Material Design Components
 
+---
 
+## 🔗 API Used
 
-## 🧑🏽‍💻 Autora
-Anne Caroline Pinho Valentim
+[JSONPlaceholder - /todos endpoint](https://jsonplaceholder.typicode.com/todos)  
+A public API used to simulate remote task loading.
 
+---
+
+## 👩🏽‍💻 Author
+
+**Anne Caroline Pinho Valentim**  
+[LinkedIn](https://linkedin.com/in/annepinho) • [GitHub](https://github.com/anne-pinho)
