@@ -1,6 +1,6 @@
 # 📝 Android To-Do List App
 
-An Android to-do list application built with Kotlin, Jetpack Compose, Room, and ViewModel. Now integrated with a public API using Retrofit for remote data synchronization.
+An Android task management app built with Kotlin using XML layouts, Room, ViewModel, and integrated with a public API via Retrofit for remote data synchronization.
 
 ---
 
@@ -11,20 +11,19 @@ An Android to-do list application built with Kotlin, Jetpack Compose, Room, and 
 - 🗑️ Delete tasks
 - 📋 Display tasks in a list
 - 🧠 Local data storage with Room
-- ☁️ Remote data sync using Retrofit
-- 🔁 Reactive updates with LiveData + ViewModel
+- ☁️ Remote sync using Retrofit
+- 🔁 Reactive updates with LiveData and ViewModel
 
 ---
 
 ## 🛠️ Technologies Used
 
 - Kotlin
-- Jetpack Compose
+- XML Layouts + ViewBinding
 - Room Persistence Library
 - ViewModel & LiveData
 - Retrofit + Gson Converter
 - RecyclerView
-- ViewBinding
 - Material Design Components
 
 ---
@@ -32,7 +31,7 @@ An Android to-do list application built with Kotlin, Jetpack Compose, Room, and 
 ## 🔗 API Used
 
 [JSONPlaceholder - /todos endpoint](https://jsonplaceholder.typicode.com/todos)  
-A public API used to simulate remote task loading.
+Public API used to simulate remote task loading.
 
 ---
 
