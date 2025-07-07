@@ -94,4 +94,8 @@ dependencies {
 
     implementation(libs.androidx.activity.ktx)
 
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+
 }

@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(), TodoAdapter.TodoClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        todoViewModel.fetchTodosFromApi()
 
         initUI()
 
